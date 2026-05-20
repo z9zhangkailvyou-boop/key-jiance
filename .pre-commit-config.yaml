@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: secret-scanner
+        name: Secret Scanner
+        description: Detect accidentally committed API keys and secrets
+        entry: python secret-scanner.py
+        language: system
+        files: .*
+        exclude: '\.(pyc|class|o|obj|exe|dll|so|dylib|jar|zip|tar|gz|bz2|7z|jpg|jpeg|png|gif|bmp|ico|mp3|mp4|avi|mov|mkv|ttf|otf|woff|woff2|eot|pdf|doc|docx|xls|xlsx|db|sqlite|bin|pack|idx)$'
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit, pre-push]
