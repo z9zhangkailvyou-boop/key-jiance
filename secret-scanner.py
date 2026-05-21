@@ -391,3 +391,7 @@ Examples:
 
 if __name__ == "__main__":
     sys.exit(main())
+    
+EXCLUDE_PATHS = [
+    "README.md",  # Documentation with example patterns
+]
